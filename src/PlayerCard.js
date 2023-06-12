@@ -1,14 +1,27 @@
-import { styled } from '@mui/system';
-import { Typography, Card, CardMedia, CardContent } from '@mui/material';
-import { useState } from 'react';
+import { styled} from '@mui/system';
+import { Typography, Card, CardMedia, CardContent, Grid } from '@mui/material';
+import React, { useState} from "react";
 
 const PlayerCardRoot = styled(Card)(({ theme }) => ({
   position: 'relative',
   color: 'white',
   borderRadius: 6,
   overflow: 'hidden',
-  height: 450,
-  width: 350,
+  height: '100%',
+  width: '100%',
+  [theme.breakpoints.up('xs')]: {
+    height: 200,
+    width: 150,
+  },
+  [theme.breakpoints.up('sm')]: {
+    height: 300,
+    width: 200,
+  },
+  [theme.breakpoints.up('md')]: {  
+    height: 400,  
+    width: 300,
+  },
+  
 }));
 
 const PlayerCardMedia = styled(CardMedia)(({ theme }) => ({
@@ -16,18 +29,26 @@ const PlayerCardMedia = styled(CardMedia)(({ theme }) => ({
 }));
 
 const PlayerCardContent = styled(CardContent)(({ theme }) => ({
-  position: 'relative',
-  bottom: '30%',
-  left: 0,
-  backgroundColor: 'rgba(0, 0, 0, 0.8)',
+  position: 'absolute',
+  bottom: 0,  
+  left: 0,  
+  right: 0,  
+  backgroundColor: 'rgba(0, 0, 0, 0.6)',
   width: '100%',
-  height: 450,
-  padding: 25,
+  height: '100%',  
+  padding: 20,
   transition: 'transform 0.3s ease-in-out',
   transform: 'translateY(0%)',
+  
+
+  '&:hover': {
+    '& #Name': {
+      color: '#f9a01b',
+    },
+  },
 }));
 
-const PlayerCard = () => {
+const PlayerCard = ({ player }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -38,38 +59,45 @@ const PlayerCard = () => {
     setIsHovered(false);
   };
 
-  return (
+    return (
     <PlayerCardRoot onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <PlayerCardMedia
-        image="https://cdn.nba.com/teams/static/heat/imgs/roster/2223/1628389-2223.jpg"
-        title="Bam Adebayo"
+        image={player.photoUrl}
+        title={`${player.firstName} ${player.lastName}`}
       />
       
-      <PlayerCardContent style={{ transform: isHovered ? 'translateY(-70%)' : 'translateY(0%)' }}>
-        {isHovered}
-        <Typography variant="h5" component="h5">
-          Bam
-          <br />
-          Adebayo
-        </Typography>
-        <Typography variant="subtitle1">Center-Forward</Typography>
+      <PlayerCardContent style={{ paddingLeft: "30px", transform: isHovered ? 'translateY(0%)' : 'translateY(70%)' }}>
+        <Grid container alignItems="center">
+          <Grid item xs={8}>
+            <Typography id = "Name" variant="h5" sx ={{fontWeight: 600}}>
+              {player.firstName.toUpperCase()}
+            </Typography>
+            <Typography id = "Name" variant="h5" sx ={{fontWeight: 600,lineHeight: '0.7em'}}>
+              {player.lastName.toUpperCase()}
+            </Typography>
+            <Typography variant="h5" sx={{color:isHovered? 'lightwhite':'lightgrey'}}>
+              {player.position}
+            </Typography>
+          </Grid>
+          <Grid item xs={4} style={{ textAlign: "right", paddingRight: "20px",marginTop: '-30px'}}>
+            <Typography variant="h2" sx={{ lineHeight: '0.7em',fontWeight:500 ,color:isHovered? 'lightwhite':'lightgrey'}}>
+              {player.jerseyNum}
+            </Typography>
+          </Grid>
+        </Grid>
           <br />
         {isHovered && (
           <>
-            <Typography variant="body1">
-              Height: <strong>6'9"</strong>
-            </Typography>
-            <Typography variant="body1">
-              Weight: <strong>255lbs</strong>
-            </Typography>
-            <Typography variant="body1">
-              DOB: <strong>07/18/1997</strong>
-            </Typography>
-            <Typography variant="body1">
-              Prior To NBA: <strong>Kentucky</strong>
-            </Typography>
-            <Typography variant="body1">
-              Country: <strong>USA</strong>
+            <Typography  sx={{ lineHeight: '2em', paragraphSpacing: '0.5em' ,fontSize: '1.2rem'}} variant="paragraph">
+              HEIGHT: <strong>{Math.floor(player.height / 12)}'{player.height % 12}</strong>
+              <br />
+              WEIGHT: <strong>{player.weight} lbs</strong>
+              <br />
+              DOB: <strong>{new Date(player.birthDate).toLocaleDateString()}</strong>
+              <br />
+              YEARS PRO: <strong>{player.yearsPro}</strong>
+              <br />
+              COUNTRY: <strong>{player.homeCountry}</strong>
             </Typography>
           </>
         )}
