@@ -75,12 +75,12 @@ const PlayerCard = ({ player }) => {
             <Typography id = "Name" variant="h5" sx ={{fontWeight: 600,lineHeight: '0.7em'}}>
               {player.lastName.toUpperCase()}
             </Typography>
-            <Typography variant="h5" sx={{color:isHovered? 'lightwhite':'lightgrey'}}>
+            <Typography variant="h5" sx={{color:isHovered? 'lightwhite':'lightgrey',lineHeight: '1.9em'}}>
               {player.position}
             </Typography>
           </Grid>
           <Grid item xs={4} style={{ textAlign: "right", paddingRight: "20px",marginTop: '-30px'}}>
-            <Typography variant="h2" sx={{ lineHeight: '0.7em',fontWeight:500 ,color:isHovered? 'lightwhite':'lightgrey'}}>
+            <Typography variant="h2" sx={{ lineHeight: '0.9em',fontWeight:500 ,color:isHovered? 'lightwhite':'lightgrey'}}>
               {player.jerseyNum}
             </Typography>
           </Grid>
