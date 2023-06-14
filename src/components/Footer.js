@@ -40,7 +40,9 @@ const Footer = () => {
     boxSizing: 'border-box',
     borderWidth: 0,
     borderStyle: 'solid',
-    borderColor: 'currentColor'
+    borderColor: 'currentColor',
+    position:'relative',
+    Top:'3rem'
   };
 
   return (

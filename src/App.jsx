@@ -1,20 +1,18 @@
-import React from "react";
-import {Typography } from '@mui/material';
-import Footer from "./components/Footer";
-import Nav from "./components/Nav";
-import ShowCard from "./components/ShowCard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Roster from "./pages/Roster";
+import Oladipo from "./pages/Oladipo";
+
 
 function App() {
   return (
     <>
-      <Nav/>
-      <Typography variant="h3" sx={{ color: '#8B0000',fontWeight: 'bold', paddingTop: '30px', paddingLeft: '30px',paddingBottom: '30px' }}>
-        Roster
-      </Typography>
-      <main>
-        <ShowCard/>
-      </main>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route index element = {<Oladipo/>}/>
+          <Route path="/Roster" element = {<Roster/>}/>
+          <Route path="/Oladipo" element = {<Oladipo/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

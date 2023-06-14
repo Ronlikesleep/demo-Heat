@@ -37,7 +37,7 @@ const PlayerCardContent = styled(CardContent)(({ theme }) => ({
   width: '100%',
   height: '100%',  
   padding: 20,
-  transition: 'transform 0.3s ease-in-out',
+  transition: 'transform 0.5s ease-in-out',
   transform: 'translateY(0%)',
   
 
@@ -95,7 +95,7 @@ const PlayerCard = ({ player }) => {
               <br />
               DOB: <strong>{new Date(player.birthDate).toLocaleDateString()}</strong>
               <br />
-              YEARS PRO: <strong>{player.yearsPro}</strong>
+              EXPERIENCE: <strong>{player.yearsPro}</strong>
               <br />
               COUNTRY: <strong>{player.homeCountry}</strong>
             </Typography>

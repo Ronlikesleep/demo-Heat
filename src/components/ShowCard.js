@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Grid, Container } from '@mui/material';
 import PlayerCard from './PlayerCard';
-import data from '/Users/zhangshanrong/Desktop/mavericks-roster-demo/src/data/miamiHeat.json';
+import data from '../data/miamiHeat.json';
 
 const ShowCard = () => {
   const [miaPlayers, setMiaPlayers] = useState([]);
