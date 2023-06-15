@@ -7,8 +7,7 @@ function Oladipo() {
       <>
         <Nav/>
         <Summary/>
-        
-        
+        <StatsTable/>
         <Footer />
       </>
     );

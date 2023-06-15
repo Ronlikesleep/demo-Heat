@@ -42,7 +42,8 @@ const Footer = () => {
     borderStyle: 'solid',
     borderColor: 'currentColor',
     position:'relative',
-    Top:'3rem'
+    marginTop:'1rem'
+    
   };
 
   return (

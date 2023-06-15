@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider, styled } from '@mui/system';
-import {  Typography, Grid} from '@mui/material';
+import {  Typography, Grid, Box} from '@mui/material';
 
 const theme = createTheme({
   typography: {
@@ -43,53 +43,89 @@ function Summary() {
                 </Typography>
             </Grid>
         </Grid>
-        <Grid container sx={{marginTop: '5rem'}}>
-            <Grid item xs={12} sm={12} md={1} style={{ borderTop: '2px solid white', borderBottom: '2px solid white',backgroundColor: 'darkred'}}>
+        <Grid container sx={{marginTop: '5.5rem'}}>
+            <Grid item xs={0} sm={0} md={1} style={{ borderTop: '0.5px solid white', borderBottom: '0.5px solid white',backgroundColor: 'darkred'}}>
             </Grid>
-            <Grid item xs={12} sm={12} md={2.5} style={{ borderTop: '2px solid white', borderBottom: '2px solid white',backgroundColor: 'darkred', alignItems: 'center', justifyContent: 'center'}}>
-                <Typography variant="body1" sx = {{color:'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, borderRight:'0.5px solid white',borderLeft:'1px solid white'}}>
-                    <Typography sx={{padding:{ xs: '1rem', sm: '2rem', md: '2.5rem' },display:'flex',alignItems: 'center', justifyContent: 'center'}}>
-                        PPG: 
-                        <br/>
-                        16.6
-                        <br/>
-                        RPG: 
-                        <br/>
-                        2.7
+            <Grid item xs={6} sm={6} md={2.5} style={{ borderTop: '0.5px solid white', borderBottom: '0.5px solid white',backgroundColor: 'darkred', alignItems: 'center', justifyContent: 'center'}}>
+                <Box sx={{ padding: { xs: '0.8rem', sm: '1.2rem', md: '2rem' }, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, borderRight: '0.5px solid white', borderLeft: '0.5px solid white' }}>
+                    <Typography variant="body1">
+                        PPG
                     </Typography>
-                </Typography>
+                    <Typography variant="body1" sx ={{fontWeight:'bolder'}}>
+                        5.6
+                    </Typography>
+                    <Typography variant="body1">
+                        RPG
+                    </Typography>
+                    <Typography variant="body1" sx ={{fontWeight:'bolder'}}>
+                        2.4
+                    </Typography>
+                </Box>
             </Grid>
-            <Grid item xs={12} sm={12} md={2.5} style={{ borderTop: '2px solid white', borderBottom: '2px solid white',backgroundColor: 'darkred'}}>
-                <Typography variant="body1" sx = {{color:'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, borderRight:'0.5px solid white',borderLeft:'0.5px solid white'}}>
-                    <Typography sx={{padding:{ xs: '1rem', sm: '2rem', md: '2.5rem'},display:'flex',alignItems: 'center', justifyContent: 'center'}}>
-                        APG:
-                        <br/>
-                        0.8
-                        <br/>
-                        PIE: 
-                        <br/>
+            <Grid item xs={6} sm={6} md={2.5} style={{ borderTop: '0.5px solid white', borderBottom: '0.5px solid white',backgroundColor: 'darkred'}}>
+                <Box sx={{ padding: { xs: '0.8rem', sm: '1.2rem', md: '2rem' }, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, borderRight: '0.5px solid white', borderLeft: '0.5px solid white' }}>
+                    <Typography variant="body1">
+                        APG
+                    </Typography>
+                    <Typography variant="body1" sx ={{fontWeight:'bolder'}}>
+                        16.6
+                    </Typography>
+                    <Typography variant="body1">
+                        PIE
+                    </Typography>
+                    <Typography variant="body1" sx ={{fontWeight:'bolder'}}>
                         7.6
                     </Typography>
-                </Typography>
+                </Box>
             </Grid>
-            <Grid item xs={12} sm={12} md={5} style={{ borderTop: '2px solid white', borderBottom: '2px solid white',backgroundColor: 'darkred' }}>
-            <Typography variant="body1" sx = {{color:'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, borderRight:'1px solid white',borderLeft:'0.5px solid white'}}>
-                    <Typography sx={{padding:{ xs: '1rem', sm: '2rem', md: '2.5rem' },display:'flex',alignItems: 'center', justifyContent: 'center'}}>
-                        EXPERIENCE: 
-                        <br/>
-                        4 Years
-                        <br/>
-                        Age: 
-                        <br/>
-                        28 Years
-                    </Typography>
-                </Typography>
+            <Grid item xs={12} sm={12} md={5} style={{ borderTop: '0.5px solid white', borderBottom: '0.5px solid white',backgroundColor: 'darkred' }}>
+                <Grid container>
+                    <Grid item xs={6} sm={6} md={6} style={{ borderBottom: '0.25px solid white', borderRight: '0.5px solid white'}}>
+                    <Box sx={{ padding: { xs: '0.4rem', sm: '0.6rem', md: '1rem' }, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                        <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }}}>
+                            AGE:
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, fontWeight: 'bold' }}>
+                            28 Years
+                        </Typography>
+                    </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={6} style={{ borderBottom: '0.25px solid white',borderRight: '0.5px solid white'}}>
+                    <Box sx={{ padding: { xs: '0.4rem', sm: '0.6rem', md: '1rem' }, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                        <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }}}>
+                            EXPERIENCE:
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, fontWeight: 'bold' }}>
+                            4 Years
+                        </Typography>
+                    </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={6} style={{ borderTop: '0.25px solid white', borderRight: '0.5px solid white'}}>
+                    <Box sx={{ padding: { xs: '0.4rem', sm: '0.6rem', md: '1rem' }, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                        <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }}}>
+                            COUNTRY:
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, fontWeight: 'bold' }}>
+                            USA
+                        </Typography>
+                    </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={6} style={{ borderTop: '0.25px solid white', borderRight: '0.5px solid white'}}>
+                    <Box sx={{ padding: { xs: '0.4rem', sm: '0.6rem', md: '1rem' }, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                        <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }}}>
+                            DREAM:
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, fontWeight: 'bold' }}>
+                            GET AN INTERN
+                        </Typography>
+                    </Box>
+                    </Grid>
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={12} md={1} style={{ borderTop: '2px solid white', borderBottom: '2px solid white',backgroundColor: 'darkred' }}>
+            <Grid item xs={12} sm={12} md={1} style={{ borderTop: '0.5px solid white', borderBottom: '0.5px solid white',backgroundColor: 'darkred' }}>
             </Grid>
         </Grid>
     </ThemeProvider>
-    
   );
 }
 
