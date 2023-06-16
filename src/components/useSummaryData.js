@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import oladipoData from '../data/oladipo.json';
 
+// a hook to automaticlly get the summary data for one player
+
 function calculateAge(birthDateString) {
   const birthDate = new Date(birthDateString);
   const currentDate = new Date();

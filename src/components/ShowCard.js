@@ -3,6 +3,8 @@ import { Grid, Container } from '@mui/material';
 import PlayerCard from './PlayerCard';
 import data from '../data/miamiHeat.json';
 
+//A series of the cards showing the players' info
+
 const ShowCard = () => {
   const [miaPlayers, setMiaPlayers] = useState([]);
 
@@ -36,7 +38,7 @@ const ShowCard = () => {
     <Container sx={{ py: 3, display: 'flex', justifyContent: 'center' }} maxWidth="xl">
       <Grid container spacing={2} justifyContent="flex-start">
         {miaPlayers.map((player, index) => (
-          <Grid item key={player.nbaId} xs={12} sm={6} md={3} sx={{ display: 'flex', justifyContent: 'center'}}>
+          <Grid item key={player.nbaId} xs={12} sm={6} md={4} sx={{ display: 'flex', justifyContent: 'center'}}>
             <PlayerCard player={player} />
           </Grid>
         ))}

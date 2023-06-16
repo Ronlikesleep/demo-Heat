@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 import oladipoData from '../data/oladipo.json'; 
 
-const timeToMinutes = time => {
-    const [minutes, seconds] = time.split(':').map(Number);
-    return minutes + seconds / 60;
-  };
-
   export const usePlayerData = (seasonType, perMode) => {
     const [playerData, setPlayerData] = useState([]);
     const [seasonYear, setSeasonYear] = useState([]);
@@ -39,7 +34,6 @@ const timeToMinutes = time => {
             }else{
                 filteredData = fetchedData.filter(data => data.Season === seasonType);
             }
-          
         } else {
           filteredData = fetchedData;
         }

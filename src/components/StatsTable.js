@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Select, MenuItem, FormControl, InputLabel, Grid,Typography } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Select, MenuItem, FormControl, InputLabel, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import IconButton from '@mui/material/IconButton';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -7,24 +7,30 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import CollapseDetails from './CollapseDetails';
 import { usePlayerData } from './usePlayerData';
 
+//showing the stats of the player
+
 const perModes = ["Overview Per Game", "Overview Per 36", "Overview Per 75", "Overview Per 100", "Overview Total"];
 
 const glossary = [
   { term: 'GP', definition: 'Games Played' },
+  { term: 'GS', definition: 'Games Started' },
   { term: 'MIN', definition: 'Minutes Played' },
-  { term: 'OFFRTG', definition: 'Offensive Rating' },
-  { term: 'DEFRTG', definition: 'Defensive Rating' },
-  { term: 'NETRTG', definition: 'Net Rating' },
-  { term: 'AST%', definition: 'Assist Percentage' },
-  { term: 'AST/TO', definition: 'Assist to Turnover Ratio' },
-  { term: 'AST RATIO', definition: 'Assist Ratio' },
-  { term: 'OREB%', definition: 'Offensive Rebounding Percentage' },
-  { term: 'DREB%', definition: 'Defensive Rebounding Percentage' },
-  { term: 'REB%', definition: 'Rebounding Percentage' },
-  { term: 'TO RATIO', definition: 'Turnover Ratio' },
-  { term: 'EFG%', definition: 'Effective Field Goal Percentage' },
-  { term: 'TS%', definition: 'True Shooting Percentage' },
-  { term: 'USG%', definition: 'Usage Percentage' },
+  { term: 'PTS', definition: 'Points Per Game' },
+  { term: 'EFF%', definition: 'Efficiency Percentage' },
+  { term: 'FTA', definition: 'Free Throws Attempted' },
+  { term: 'FT%', definition: 'Free Throw Percentage' },
+  { term: '3PA', definition: 'Three-Pointers Attempted' },
+  { term: '3P%', definition: 'Three-Point Percentage' },
+  { term: 'OREB', definition: 'Offensive Rebounds' },
+  { term: 'DREB', definition: 'Defensive Rebounds' },
+  { term: 'REB', definition: 'Rebounds Per Game' },
+  { term: 'AST', definition: 'Assists Per Game' },
+  { term: 'STL', definition: 'Steals Per Game' },
+  { term: 'BLK', definition: 'Blocks Per Game' },
+  { term: 'TOV', definition: 'Turnovers Per Game' },
+  { term: 'FTO', definition: 'Forced turnovers Per Game' },
+  { term: 'MS', definition: 'Minutes per Game Score' },
+  //I am not sure about the meaning of FTO and MS
 ];
 
 
@@ -85,8 +91,8 @@ function StatsTable() {
       <TableContainer component={Paper} sx={{marginTop:'1rem'}}>
         <Table sx={{ minWidth: ' 650px' }} aria-label="details table">
           <TableHead>
-            <TableRow >
-              <TableCell sx={{fontWeight:'bold'}}>By Year</TableCell>
+            <TableRow sx={{ '& > *': { padding: '0.5rem' } }}>
+              <TableCell sx={{fontWeight:'bold'}} align="left">By Year</TableCell>
               <TableCell sx={{fontWeight:'bold'}} align="left">Team</TableCell>
               <TableCell sx={{fontWeight:'bold'}} align="right">GP</TableCell>
               <TableCell sx={{fontWeight:'bold'}} align="right">GS</TableCell>
@@ -108,9 +114,9 @@ function StatsTable() {
               <TableCell sx={{fontWeight:'bold'}} align="right">MS</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody sx={{padding:'2rem'}}>
               {rows.map((row, index) => (
-                <TableRow key={index}>
+                <TableRow key={index} sx={{ '& > *': { padding: '0.5rem' } }}>
                   <TableCell>{row.Season}</TableCell>
                   <TableCell align="left">{row.team}</TableCell>
                   <TableCell align="right">{row.gp}</TableCell>
