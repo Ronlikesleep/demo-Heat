@@ -2,6 +2,7 @@ import { Button, TextField, Box, Typography,Grid } from '@mui/material';
 import { useState } from 'react';
 
 const ScoutingReports = () => {
+  
   const [formInput, setFormInput] = useState({
     scout: '',
     player: '',
@@ -18,26 +19,21 @@ const ScoutingReports = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    
-    try {
-      const response = await fetch('http://localhost:3000/Oladipo', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formInput)
-      });
+    console.log("submit");
+    const response = await fetch('/abcde', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formInput)
+    });
   
       if (response.ok) {
         console.log('Report submitted successfully');
       } else {
         console.error('Failed to submit report');
       }
-    } catch (error) {
-      console.error('Failed to submit report', error);
-    }
+    
   };
   
 

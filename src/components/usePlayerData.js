@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import oladipoData from '../data/oladipo.json'; 
+import oladipoData from '../backend/data/oladipo.json'; 
 
 // a hook to filter the player's data
   export const usePlayerData = (seasonType, perMode) => {

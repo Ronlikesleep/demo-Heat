@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import StatsTable from "../components/StatsTable";
 import Summary from "../components/Summary";
 import React, { useEffect } from 'react';
-import Forum from "../components/Forum"
+import Form from "../components/Form";
 function Oladipo({ match }) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -14,7 +14,7 @@ function Oladipo({ match }) {
       <Nav />
       <Summary />
       <StatsTable />
-      <Forum />
+      <Form />
       <Footer />
     </>
   );

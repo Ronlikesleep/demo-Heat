@@ -14,15 +14,15 @@ const PlayerCardRoot = styled(Card)(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.up('xs')]: {
     height: '23.5rem',
-    width: '21.5rem',
+    width: '22.5rem',
   },
   [theme.breakpoints.up('sm')]: {
     height: '26rem',
-    width: '24rem',
+    width: '23rem',
   },
   [theme.breakpoints.up('md')]: {  
-    height: '30rem',  
-    width: '22.75rem',
+    height: '28rem',  
+    width: '24rem',
   },
   
 }));
@@ -63,7 +63,7 @@ const PlayerCard = ({ player }) => {
   };
 
     return (
-    <Link to={`/${player.lastName}`}>
+    
       <PlayerCardRoot onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <PlayerCardMedia
           image={player.photoUrl}
@@ -72,17 +72,18 @@ const PlayerCard = ({ player }) => {
         
         <PlayerCardContent style={{ paddingLeft: "30px", transform: isHovered ? 'translateY(0%)' : 'translateY(70%)' }}>
           <Grid container alignItems="center">
-            <Grid item xs={8}>
-              <Typography id = "Name" variant="h5" sx ={{fontSize:'2rem',fontWeight: 600, paddingLeft:'0.5rem'}}>
-                {player.firstName.toUpperCase()}
-              </Typography>
-              <Typography id = "Name" variant="h5" sx ={{fontWeight: 600,lineHeight: '0.7em',paddingLeft:'0.5rem'}}>
-                {player.lastName.toUpperCase()}
-              </Typography>
-              <Typography variant="h5" sx={{color:isHovered? 'lightwhite':'lightgrey',lineHeight: '1.9em',paddingLeft:'0.5rem'}}>
-                {player.position}
-              </Typography>
-            </Grid>
+          
+              <Grid item xs={8}>
+                  <Typography id = "Name" variant="h5" sx ={{fontSize:'2rem',fontWeight: 600, paddingLeft:'0.5rem'}}>
+                    {player.firstName.toUpperCase()}
+                  </Typography>
+                  <Typography id = "Name" variant="h5" sx ={{fontWeight: 600,lineHeight: '0.7em',paddingLeft:'0.5rem'}}>
+                    {player.lastName.toUpperCase()}
+                  </Typography>
+                  <Typography variant="h5" sx={{color:isHovered? 'lightwhite':'lightgrey',lineHeight: '1.9em',paddingLeft:'0.5rem'}}>
+                    {player.position}
+                  </Typography>
+              </Grid>
             <Grid item xs={4} style={{ textAlign: "right", paddingRight: "20px",marginTop: '-30px'}}>
               <Typography variant="h2" sx={{ lineHeight: '0.9em',fontWeight:500 ,color:isHovered? 'lightwhite':'lightgrey'}}>
                 {player.jerseyNum}
@@ -92,22 +93,28 @@ const PlayerCard = ({ player }) => {
             <br />
           {isHovered && (
             <Box sx={{paddingLeft:'0.5rem', paddingTop:{md:'2.5rem',sm:'1rem'}}}>
-              <Typography  sx={{lineHeight: '2em',fontSize: '1.2rem'}} variant="paragraph">
-                HEIGHT: <strong>{Math.floor(player.height / 12)}'{player.height % 12}</strong>
-                <br />
-                WEIGHT: <strong>{player.weight} lbs</strong>
-                <br />
-                DOB: <strong>{new Date(player.birthDate).toLocaleDateString()}</strong>
-                <br />
-                EXPERIENCE: <strong>{player.yearsPro}</strong>
-                <br />
-                COUNTRY: <strong>{player.homeCountry}</strong>
-              </Typography>
+                <Typography  sx={{lineHeight: '2em',fontSize: '1.2rem'}} variant="paragraph">
+                  HEIGHT: <strong>{Math.floor(player.height / 12)}'{player.height % 12}</strong>
+                  <br />
+                  WEIGHT: <strong>{player.weight} lbs</strong>
+                  <br />
+                  DOB: <strong>{new Date(player.birthDate).toLocaleDateString()}</strong>
+                  <br />
+                  EXPERIENCE: <strong>{player.yearsPro}</strong>
+                  <br />
+                  COUNTRY: <strong>{player.homeCountry}</strong>
+                </Typography>
+                <Link to={`/${player.lastName}`} style={{ textDecoration: 'underline', color: 'white'}}>
+                  <Typography  sx={{lineHeight: '2em',fontSize: '0.9rem'}} variant="paragraph">
+                    <br />
+                    Player Bio
+                  </Typography>
+                </Link>
             </Box>
           )}
         </PlayerCardContent>
       </PlayerCardRoot>
-    </Link>
+    
   );
 };
 
