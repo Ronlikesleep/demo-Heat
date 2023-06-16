@@ -63,7 +63,7 @@ const PlayerCard = ({ player }) => {
   };
 
     return (
-    <Link to={`/${player.lastName}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/${player.lastName}`}>
       <PlayerCardRoot onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <PlayerCardMedia
           image={player.photoUrl}

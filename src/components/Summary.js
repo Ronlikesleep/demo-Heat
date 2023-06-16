@@ -1,6 +1,9 @@
 import { createTheme, ThemeProvider} from '@mui/system';
 import {  Typography, Grid, Box} from '@mui/material';
 import { useSummaryPlayerStats } from './useSummaryData';
+
+//under the navigator and showing the basic info of certain player
+
 const theme = createTheme({
   typography: {
     fontFamily: '"Roboto",arial,sans-serif',
