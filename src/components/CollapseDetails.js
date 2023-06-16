@@ -4,6 +4,8 @@ import Collapse from '@mui/material/Collapse';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
+// This is used for the details of the collapse under the table
+// showing the meaning of the columns
 
 const CollapseDetails = ({ open, glossary }) => {
     return (

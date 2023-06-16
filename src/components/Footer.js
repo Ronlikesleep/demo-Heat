@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Avatar } from '@mui/material';
 
+//Regular footer showing the icon of Miami Heat
+
 const Footer = () => {
   const logos = [
     {
