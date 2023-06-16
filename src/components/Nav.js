@@ -14,7 +14,7 @@ const Nav = () => {
             sx={{ mr: 1, width: { xs: '3rem', sm: '3.9rem', md: '6rem' }, height: { xs: '3rem', sm: '3.9rem', md: '6rem' } }}
           />
           <Typography variant="h4" sx={{ fontStyle: 'italic', fontWeight: 'bold' }}>
-            Miami HEAT
+            Miami HEAT 
           </Typography>
         </Box>
       </AppBar>

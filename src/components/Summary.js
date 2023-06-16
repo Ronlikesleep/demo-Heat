@@ -1,6 +1,6 @@
-import { createTheme, ThemeProvider, styled } from '@mui/system';
+import { createTheme, ThemeProvider} from '@mui/system';
 import {  Typography, Grid, Box} from '@mui/material';
-
+import { useSummaryPlayerStats } from './useSummaryData';
 const theme = createTheme({
   typography: {
     fontFamily: '"Roboto",arial,sans-serif',
@@ -21,25 +21,26 @@ const theme = createTheme({
 });
 
 function Summary() {
+const playerSummaryStats = useSummaryPlayerStats();
   return (
     <ThemeProvider theme={theme}>
         <Grid container spacing={3} style={{ maxWidth: '100%', height: 'auto',position: 'relative', top: '5rem'}}>
             <Grid item xs={12} sm={6} md={5} style={{ paddingLeft:'6rem',paddingRight: '5rem'}}>
                 <img
-                src="https://cdn.nba.com/headshots/nba/latest/1040x760/203506.png"
+                src={playerSummaryStats.photoUrl}
                 style={{ maxWidth: '110%',height:'auto'}}
                 alt="Player Headshot"
                 />
             </Grid>
             <Grid item xs={12} sm={6} md={7} sx={{lineHeight: '0.9'}}>
                 <Typography variant="body1" sx = {{paddingLeft:'3rem',fontSize: {xs: '1.5rem', sm: '1.7rem', md: '2.1rem' }}} >
-                    Miami Heat | #4 | SG
+                    Miami Heat | #{playerSummaryStats.jerseyNum} | {playerSummaryStats.position}
                 </Typography>
                 <Typography variant="h5" sx={ {paddingLeft:'3rem',fontWeight: 'bolder',fontSize: { xs: '2rem', sm: '3.2rem', md: '4.4rem' }}}>
-                    Victor
+                    {playerSummaryStats.firstName}
                 </Typography>
                 <Typography variant="h5" sx={ {paddingLeft:'3rem',fontWeight: 'bolder',fontSize: { xs: '2rem', sm: '3.2rem', md: '4.4rem' }}}>
-                    Oladipo
+                    {playerSummaryStats.lastName}
                 </Typography>
             </Grid>
         </Grid>
@@ -52,13 +53,13 @@ function Summary() {
                         PPG
                     </Typography>
                     <Typography variant="body1" sx ={{fontWeight:'bolder'}}>
-                        5.6
+                        {playerSummaryStats.careerAverages.PT.toFixed(1)}
                     </Typography>
                     <Typography variant="body1">
                         RPG
                     </Typography>
                     <Typography variant="body1" sx ={{fontWeight:'bolder'}}>
-                        2.4
+                    {playerSummaryStats.careerAverages.REB.toFixed(1)}
                     </Typography>
                 </Box>
             </Grid>
@@ -68,13 +69,13 @@ function Summary() {
                         APG
                     </Typography>
                     <Typography variant="body1" sx ={{fontWeight:'bolder'}}>
-                        16.6
+                        {playerSummaryStats.careerAverages.AST.toFixed(1)}
                     </Typography>
                     <Typography variant="body1">
-                        PIE
+                        SPG
                     </Typography>
                     <Typography variant="body1" sx ={{fontWeight:'bolder'}}>
-                        7.6
+                        {playerSummaryStats.careerAverages.STL.toFixed(1)}
                     </Typography>
                 </Box>
             </Grid>
@@ -86,7 +87,7 @@ function Summary() {
                             AGE:
                         </Typography>
                         <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, fontWeight: 'bold' }}>
-                            28 Years
+                            {playerSummaryStats.age} Years
                         </Typography>
                     </Box>
                     </Grid>
@@ -96,7 +97,7 @@ function Summary() {
                             EXPERIENCE:
                         </Typography>
                         <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, fontWeight: 'bold' }}>
-                            4 Years
+                            {playerSummaryStats.yearsPro} Years
                         </Typography>
                     </Box>
                     </Grid>
@@ -106,17 +107,17 @@ function Summary() {
                             COUNTRY:
                         </Typography>
                         <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, fontWeight: 'bold' }}>
-                            USA
+                            {playerSummaryStats.homeCountry}
                         </Typography>
                     </Box>
                     </Grid>
                     <Grid item xs={6} sm={6} md={6} style={{ borderTop: '0.25px solid white', borderRight: '0.5px solid white'}}>
                     <Box sx={{ padding: { xs: '0.4rem', sm: '0.6rem', md: '1rem' }, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                         <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }}}>
-                            DREAM:
+                            HIGH SCHOOL:
                         </Typography>
                         <Typography variant="body1" sx={{ color: 'white', fontSize: { xs: '0.5rem', sm: '0.7rem', md: '1.1rem' }, fontWeight: 'bold' }}>
-                            GET AN INTERN
+                            {playerSummaryStats.highSchool}
                         </Typography>
                     </Box>
                     </Grid>
