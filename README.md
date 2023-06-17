@@ -1,4 +1,4 @@
-# React Basketball Roster Application
+# React Basketball Roster Application - Mavericks
 
 This app consists of a frontend application built with React.js and a backend API built with Express.js.This application presents a basketball roster using React and Material UI and is applied with responsive design. 
 
