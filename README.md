@@ -2,6 +2,8 @@
 
 This app consists of a frontend application built with React.js and a backend API built with Express.js.This application presents a basketball roster using React and Material UI and is applied with responsive design. 
 
+<img width="1439" alt="image" src="https://github.com/Ronlikesleep/mavericks-roster-demo/assets/29923635/f7c9d36a-7560-4639-8d6c-51f715398d06">
+
 It consists of several components which render various sections of the application. I have deployed this app at https://dancing-basbousa-a2000d.netlify.app/
 
 ## Components - front - end
