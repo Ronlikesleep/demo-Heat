@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# React Basketball Roster Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app consists of a frontend application built with React.js and a backend API built with Express.js.This application presents a basketball roster using React and Material UI and is applied with responsive design. 
 
-## Available Scripts
+It consists of several components which render various sections of the application. I have deployed this app at https://dancing-basbousa-a2000d.netlify.app/
 
-In the project directory, you can run:
+## Components - front - end
 
-### `npm start`
+### 1. Roster
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The `Roster` component renders the main page of the application. It includes the Navigation bar, `Nav`, at the top, the `ShowCard` component for showcasing players, and the `Footer` at the bottom.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Oladipo
 
-### `npm test`
+The `Oladipo` component is a specific player page. It consists of a summary of the player's stats, a table presenting more detailed statistics, a form to add scouting reports, and a footer at the bottom.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. CollapseDetails
 
-### `npm run build`
+The `CollapseDetails` component shows a collapsible details section under the statistics table. It displays a glossary of terms used in the table. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4. Footer
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The `Footer` component is a generic footer that displays Miami Heat logos. This component is used across multiple pages.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 5. ScoutingReports
 
-### `npm run eject`
+`ScoutingReports` is a form for adding scouting reports. It captures information such as scout name, player name, event name, team, and the scouting report.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 6. Nav
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`Nav` is the Navigation bar of the application. It features a Miami Heat logo and link to the `Roster` page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 7. PlayerCard
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`PlayerCard` showcases one specific player's basic information. It contains the player's photo, full name, jersey number, position, and other key details. It also provides a link to the player's bio.
 
-## Learn More
+## Server - back - end
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This app consists of a frontend application built with React.js and a backend API built with Express.js. The reports are currently stored in a JSON file.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Requirements
 
-### Code Splitting
+- Node.js
+- npm or yarn (we recommend yarn)
+- A modern web browser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Installation
 
-### Analyzing the Bundle Size
+Clone the repository to your local machine, then install the necessary packages using npm or yarn.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+git clone https://github.com/Ronlikesleep/mavericks-roster-demo.git
+cd mavericks-roster-demo
+npm install
+```
+or
+```
+yarn install
+```
 
-### Making a Progressive Web App
+## Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Start the application using npm or yarn:
 
-### Advanced Configuration
+```
+npm start
+```
+or
+```
+yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The application should now be running on `http://localhost:3000`.
 
-### Deployment
+To run the backend Express.js application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+node server.js
+```
 
-### `npm run build` fails to minify
+This runs the server on `localhost:3005`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
