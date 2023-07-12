@@ -14,7 +14,7 @@ The `Roster` component renders the main page of the application. It includes the
 
 ### 2. Oladipo
 
-The `Oladipo` component is a specific player page. It consists of a summary of the player's stats, a table presenting more detailed statistics, a form to add scouting reports, and a footer at the bottom.
+The `Oladipo` component is a specific player page. (Only this page is done :)It consists of a summary of the player's stats, a table presenting more detailed statistics, a form to add scouting reports, and a footer at the bottom.
 
 ### 3. CollapseDetails
 
